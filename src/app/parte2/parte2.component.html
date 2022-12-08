@@ -1,0 +1,28 @@
+<br><br>
+<button class="btn btn-info" type="button" [routerLink]="['/parte2/form']">Nuevo Login</button>
+
+<div class="contenedor">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">USUARIO</th>
+                <th scope="col">PASSWORD</th>
+                <th scope="col">ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let log of login">
+                <td scope="row">{{log.id_login}}</td>
+                <td>{{log.usuario}}</td>
+                <td>{{log.password}}</td>
+                <td>
+                    <boton class="btn btn-primary"
+                        [routerLink]="['/parte2/form',log.id_login]">Editar</boton>
+
+                    <button class="btn btn-danger" (click)="delete(log)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
